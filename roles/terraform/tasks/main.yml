@@ -1,0 +1,9 @@
+---
+
+- name: apply terraform manifest
+  terraform:
+    project_path: ./terraform
+    variables:
+      my_ip: "{{ external_ip }}"
+    state: "{{ aws_state }}"
+  register: tf_result
